@@ -1,0 +1,82 @@
+
+ .left-bar{
+    float: left;
+    margin-right: 2%;
+    margin-top:2%;
+} 
+
+.right-bar{
+   float: left;
+   color: azure;
+   background-color: #1D1C21;
+   justify-content: center;
+}
+
+.list-items-css{
+    color: black;
+    width: 18rem;
+    /* background-color: #343a40fc; */
+    /* padding: 23px; */
+    border-radius: 24%;
+
+}
+
+.card-left-body{
+    font-weight: 900;
+}
+
+
+.card-right-body{
+    opacity: 0.65;
+    margin-top: -28%;
+    color: #fffacd99;
+    font-weight: 900;
+    font-size: 0.9em;
+    background-color: black;
+    padding-left: 5%;
+}
+
+.cardSet{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0px !important;
+}
+
+li.list-group-item{
+    background-color: #333333;
+    padding-bottom: 0;
+}
+.li-value{
+    color: #ffa500e0;
+    float: right;
+    margin-left: 29%;
+    font-size: 0.67em;
+    font-weight: bolder;
+}
+
+.li-key{
+    font-size: small;
+    float: left;
+    color: #f8f9fa6b;
+    font-weight: 700;
+ }
+
+ .li-last-item{
+    border-bottom-left-radius: 0.25em;
+    height: 100px;
+    border-bottom-right-radius: 0.25em;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+ }
+
+ .card-text{
+     margin-bottom: 0.25em;
+ }
+ 

@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { getHeroDetails } from "./service/service";
+import DisplayHeroes from "./components/DisplayHeroes/DisplayHeroes";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [heroDetails, setHeroDetails] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const result = await getHeroDetails();
+      setHeroDetails(result.data);
+    })();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container-class">
+
+      {/* <div className="col-md-12 col-xs-12 col-sm-12 header">Headers</div> */}
+    
+  
+      <DisplayHeroes hereos={heroDetails.results} />
     </div>
   );
-}
+};
 
 export default App;

@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.container-class{
+  width:90%;
+  margin: auto;
+}
+
+
+.header{
+    height: 80%;
+    margin-top:2%;
+    background-color: aquamarine;
+    float: left;
+} 
+
+
