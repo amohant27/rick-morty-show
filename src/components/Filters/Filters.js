@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 import "bootstrap/dist/css/bootstrap.css";
+import { connect } from "react-redux";
+import { FILTER_HEREOS } from '../../actionsTypes';
 
 const Filters = props => {
+  const [filterName, setFilterName] = useState("");
+
+  const handleAllChecked = event => {
+    setFilterName(event.target.value);
+    props.setFilter(event.target.value);
+  };
+
   return (
     <div>
       <div className="col-md-3 col-xs-12 col-sm-12 left-bar">
@@ -18,7 +27,8 @@ const Filters = props => {
                     <input
                       className="form-check-input"
                       type="checkbox"
-                      value=""
+                      value="Human"
+                      onClick={handleAllChecked}
                     />
                     <span className="form-check-label">Human</span>
                   </label>
@@ -26,7 +36,8 @@ const Filters = props => {
                     <input
                       className="form-check-input"
                       type="checkbox"
-                      value=""
+                      value="Mythology"
+                      onClick={handleAllChecked}
                     />
                     <span className="form-check-label">Mythology</span>
                   </label>
@@ -34,7 +45,8 @@ const Filters = props => {
                     <input
                       className="form-check-input"
                       type="checkbox"
-                      value=""
+                      value="Other"
+                      onClick={handleAllChecked}
                     />
                     <span className="form-check-label">Other Species</span>
                   </label>
@@ -111,10 +123,17 @@ const Filters = props => {
           </article>
         </div>
       </div>
-
-      
     </div>
   );
 };
 
-export default Filters;
+
+const mapDispatchtoProps = dispatch =>{
+  return{
+      setFilter: (filterName) =>{
+        dispatch({ type: 'FILTER_HEREOS' , payload : filterName })
+      }
+  }
+}
+
+export default connect(null,mapDispatchtoProps)(Filters);

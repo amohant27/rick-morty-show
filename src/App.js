@@ -17,9 +17,8 @@ const App = () => {
     <div className="container-class">
 
       {/* <div className="col-md-12 col-xs-12 col-sm-12 header">Headers</div> */}
-    
   
-      <DisplayHeroes hereos={heroDetails.results} />
+      {heroDetails.results &&  <DisplayHeroes hereos={heroDetails.results} />}
     </div>
   );
 };
